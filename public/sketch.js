@@ -1,4 +1,4 @@
-// Tetris by arturham
+// Tetris by aruvham
 // 28 Nov 2016
 
 //-------------------------------------------------------------------------
@@ -131,7 +131,7 @@ var fCounter,     // frame counter
     playerY,      // player's Y position
     paused,       // boolean for pause state
     menu = true;  // boolean for menu state
-    
+
 //-------------------------------------------------------------------------
 // preload
 //-------------------------------------------------------------------------
@@ -143,7 +143,7 @@ var retroFont,
     dropSound,
     clearLinesSound,
     gameOverSound;
-    
+
 function preload() {
    retroFont       = loadFont( "assets/red-alert.ttf");
    tetrisTheme     = loadSound("assets/tetris-8-bit-theme-song.mp3");
@@ -199,7 +199,7 @@ function drawPiece(posX, posY, piece, rotation) {
   for(var x = 0; x < 4; x++) {
   for(var y = 0; y < 4; y++) {
     if(blocks[y][x] !== 0) drawBlock((posX + x) * s, (posY + y) * s, tetrominoes[piece].colorCode, 1);
-  }} 
+  }}
 }
 
 function drawBlock(x, y, colorCode, size) {
@@ -244,10 +244,10 @@ function showMenuScreen() {
   text("TETRIS", 3 * s, 6 * s, 8 * s, 3 * s);
   textSize(s);
   noStroke();
-  text("by arturham", 3 * s, 8 * s, 8*s, 3*s);
+  text("by aruvham", 3 * s, 8 * s, 8*s, 3*s);
   text("Press 'E' to start game", 3 * s, 12 * s, 8 * s, 3 * s);
   text("Use 'W', 'A', 'S', 'D' to move and 'ENTER' to pause",
-       3 * s, 16 * s, 8 * s, 4 * s);  
+       3 * s, 16 * s, 8 * s, 4 * s);
 
   noStroke();
   fill(colors[0][0]);
@@ -255,7 +255,7 @@ function showMenuScreen() {
   rect(13 * s, 7 * s, 6 * s, 2 * s);
   rect(13 * s, 10 * s, 6 * s, 2 * s);
   rect(13 * s, 13 * s, 6 * s, 2 * s);
-  
+
   if(score) {
     showScore();
     showLevel();
@@ -304,7 +304,7 @@ function showLines() {
   fill(255);
   textSize(s);
   text(str, 13 * s, 11*s, 6 * s, 2 * s);
-  
+
 }
 
 function showLevel() {
@@ -359,7 +359,7 @@ function pushPiece(posX, posY, piece, rotation) {
   for(var x = 0; x < 4; x++) {
   for(var y = 0; y < 4; y++) {
     if(blocks[y][x] !== 0) grid[posY + y][posX + x] = tetrominoes[piece].colorCode;
-  }} 
+  }}
   dropSound.play();
 }
 
@@ -371,7 +371,7 @@ function collision(posX, posY, piece, rotation) {
     if(blocks[y][x] !== 0 && grid[posY + y][posX + x] !== 0) result = true;
   }}
   return result;
-}    
+}
 
 function clearGrid() {
   for(var x = 0; x < cols; x++) {
@@ -412,7 +412,7 @@ function clearLines() {
 }
 
 function setPieces() {
-  if(pieceBag.length == 0) 
+  if(pieceBag.length == 0)
     pieceBag = ["T","T","T","T",
                 "S","S","S","S","Z","Z","Z","Z",
                 "L","L","L","L","J","J","J","J",
@@ -443,21 +443,21 @@ function setScore(n) {
 }
 
 function resetGame() {
-  fCounter = 1,  
-  pieceBag = [],   
+  fCounter = 1,
+  pieceBag = [],
   currentPiece = null,
   nextPiece = null,
-  rotation = 0,  
-  score = 0,       
-  lines = 0,        
-  level = 0,                
-  paused = false,     
+  rotation = 0,
+  score = 0,
+  lines = 0,
+  level = 0,
+  paused = false,
   menu = false;
-  
+
   clearGrid();
   setSpeed();
   setPieces();
-  
+
   //startGameSound.play();
   tetrisTheme.play();
   tetrisTheme.loop();
