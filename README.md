@@ -22,4 +22,4 @@ Features
 Link References
 -->
 
-[Play the game now]:https://github.com/ryanoasis/nerd-fonts
+[Play the game now]:https://tetris-aruvham.herokuapp.com
