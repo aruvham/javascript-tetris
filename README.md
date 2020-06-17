@@ -1,6 +1,6 @@
 # javascript-tetris
 
-**javascript-tetris** is an implementation of the classic game Tetris, it was build using [p5.js] to render all the graphics and [p5.sound] for the sound effects.
+**javascript-tetris** is an implementation of the classic game Tetris, it was build using [p5.js] to render the graphics and [p5.sound] for the sound effects.
 
 * [Play the game now]
 
